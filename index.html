@@ -109,29 +109,39 @@
                     <p>We're interested in learning about farmers, research, and potential investors.</p>
                 </div>
                 <div class="contact-form">
-                    <form>
-                        <div class="form-group">
+                    <!-- /viewform?usp=pp_url&=testname&=testemail&=testsubject&entry.636146221=test+message -->
+                    <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScDOAAeS3qLY_vFjVxboRhCAKDGFEWLGUZcSUcktg8cJZ30zQ/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
+                        <div class="form-group" >
                             <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                            <input type="text" name="entry.1852367334" id="entry.1852367334" class="form-control" placeholder="Enter your name">
                         </div>
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                            <input type="email" name="entry.813422979" id="entry.813422979" id="email" class="form-control" placeholder="Enter your email">
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Enter subject">
+                            <input type="text" name="entry.436515203" id="entry.436515203" id="subject" class="form-control" placeholder="Enter subject">
                         </div>
                         <div class="form-group">
                             <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" placeholder="Enter your message"></textarea>
+                            <textarea id="message" name="entry.636146221" id="entry.636146221" class="form-control" placeholder="Enter your message"></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
                 </div>
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+    $('#gform').on('submit', function(e) {
+        $('#gform *').fadeOut(2000);
+        $('#gform').prepend('Your message has been sent to ANTAIA...');
+        });
+    </script>
 
     <!-- Footer -->
     <footer>
